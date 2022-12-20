@@ -18,21 +18,32 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
 // const fadeOut = trigger('fadeOut', [exitTransition]);
 
 // v2
+// const fadeInOut = trigger('fadeInOut', [
+//   state(
+//     'open',
+//     style({
+//       opacity: 1
+//     })
+//   ),
+//   state(
+//     'close',
+//     style({
+//       opacity: 0
+//     })
+//   ),
+//   transition('open => *', [animate('1s ease-out')]),
+//   transition('* => open', [animate('1s ease-in')]),
+// ])
+
 const fadeInOut = trigger('fadeInOut', [
   state(
-    'open',
+    'in',
     style({
       opacity: 1
     })
   ),
-  state(
-    'close',
-    style({
-      opacity: 0
-    })
-  ),
-  transition('open => *', [animate('1s ease-out')]),
-  transition('* => open', [animate('1s ease-in')]),
+  transition('void => *', [style({opacity: 0}), animate('1s ease-out')]),
+  transition('* => void', [animate('1s ease-out'), style({opacity: 0})]),
 ])
 
 @Component({

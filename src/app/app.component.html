@@ -4,10 +4,12 @@
 
 <!-- <div *ngIf="isShow" @fadeIn @fadeOut>This is block with fade in/out</div> -->
 
-<div
+<!-- <div
   [@fadeInOut]="isShow ? 'open' : 'close'"
   (@fadeInOut.start)="onAnimationStart($event)"
   (@fadeInOut.done)="onAnimationDone($event)"
 >
   This is block with fade in/out
-</div>
+</div> -->
+
+<div *ngIf="isShow" @fadeInOut>This is block with fade in/out</div>
