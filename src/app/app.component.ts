@@ -46,20 +46,36 @@ const fadeInOut = trigger('fadeInOut', [
   transition('* => void', [animate('1s ease-out'), style({opacity: 0})]),
 ])
 
+const flyInOut = trigger('flyInOut', [
+  state('in', style({ transform: 'translateX(0)' })),
+  transition('void => *', [
+    style({ transform: 'translateX(-120%)' }),
+    animate(100)
+  ]),
+  transition('* => void', [
+    animate(100, style({ transform: 'translateX(-120%)' }))
+  ])
+])
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   // animations: [fadeIn, fadeOut],
-  animations: [fadeInOut]
+  animations: [fadeInOut, flyInOut]
 })
 export class AppComponent {
   title = 'Animation_NgZone_Angular';
 
   isShow = false;
+  isShowSlide = false;
 
   public fadeInOut():void {
     this.isShow = !this.isShow;
+  }
+
+  public slideShowHide():void {
+    this.isShowSlide = !this.isShowSlide;
   }
 
   public onAnimationStart(event:any) {

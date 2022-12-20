@@ -13,3 +13,11 @@
 </div> -->
 
 <div *ngIf="isShow" @fadeInOut>This is block with fade in/out</div>
+
+<!-- ================ -->
+<div style="margin: 24px 0;">
+  <button (click)="slideShowHide()">Slide show/hide</button>
+</div>
+<div *ngIf="isShowSlide" @flyInOut style="background-color: burlywood; display: inline-block; padding: 12px 24px;">
+  Slide nè ha!!!
+</div>
