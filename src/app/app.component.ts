@@ -31,8 +31,8 @@ const fadeInOut = trigger('fadeInOut', [
       opacity: 0
     })
   ),
-  transition('open => close', [animate('1s ease-out')]),
-  transition('close => open', [animate('1s ease-in')]),
+  transition('open => *', [animate('1s ease-out')]),
+  transition('* => open', [animate('1s ease-in')]),
 ])
 
 @Component({
@@ -49,5 +49,13 @@ export class AppComponent {
 
   public fadeInOut():void {
     this.isShow = !this.isShow;
+  }
+
+  public onAnimationStart(event:any) {
+    console.log('onAnimationStart', event);
+  }
+
+  public onAnimationDone(event:any) {
+    console.log('onAnimationDone', event);
   }
 }

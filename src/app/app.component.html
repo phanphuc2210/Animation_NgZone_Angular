@@ -1,7 +1,13 @@
 <h2>Animations in Angular</h2>
-<br>
+<br />
 <button (click)="fadeInOut()">Fade in/out</button>
 
 <!-- <div *ngIf="isShow" @fadeIn @fadeOut>This is block with fade in/out</div> -->
 
-<div [@fadeInOut]="isShow ? 'open' : 'close'">This is block with fade in/out</div> 
+<div
+  [@fadeInOut]="isShow ? 'open' : 'close'"
+  (@fadeInOut.start)="onAnimationStart($event)"
+  (@fadeInOut.done)="onAnimationDone($event)"
+>
+  This is block with fade in/out
+</div>
