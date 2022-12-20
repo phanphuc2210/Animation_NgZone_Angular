@@ -2,4 +2,6 @@
 <br>
 <button (click)="fadeInOut()">Fade in/out</button>
 
-<div *ngIf="isShow" @fadeIn @fadeOut>This is block with fade in/out</div>
+<!-- <div *ngIf="isShow" @fadeIn @fadeOut>This is block with fade in/out</div> -->
+
+<div [@fadeInOut]="isShow ? 'open' : 'close'">This is block with fade in/out</div> 
