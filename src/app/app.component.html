@@ -2,8 +2,11 @@
 <br />
 <button (click)="fadeInOut()">Fade in/out</button> -->
 
+
+<!-- ============= Cách 1 ========================= -->
 <!-- <div *ngIf="isShow" @fadeIn @fadeOut>This is block with fade in/out</div> -->
 
+<!-- ============= Cách 2 ========================= -->
 <!-- <div
   [@fadeInOut]="isShow ? 'open' : 'close'"
   (@fadeInOut.start)="onAnimationStart($event)"
@@ -12,6 +15,7 @@
   This is block with fade in/out
 </div> -->
 
+<!-- ============= Cách 3 ========================= -->
 <!-- <div *ngIf="isShow" @fadeInOut>This is block with fade in/out</div> -->
 
 <!-- ================ -->

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, transition, style, animate, state } from '@angular/animations'
 
+// ========= Cách 1
 // const enterTransition = transition(':enter', [
 //   style({
 //     opacity: 0,
@@ -17,7 +18,7 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
 // const fadeIn = trigger('fadeIn', [enterTransition]);
 // const fadeOut = trigger('fadeOut', [exitTransition]);
 
-// v2
+// ================== Cách 2
 // const fadeInOut = trigger('fadeInOut', [
 //   state(
 //     'open',
@@ -35,6 +36,7 @@ import { trigger, transition, style, animate, state } from '@angular/animations'
 //   transition('* => open', [animate('1s ease-in')]),
 // ])
 
+// =================== Cách 3
 const fadeInOut = trigger('fadeInOut', [
   state(
     'in',
