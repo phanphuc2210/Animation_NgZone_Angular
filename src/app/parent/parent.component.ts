@@ -13,9 +13,9 @@ export class ParentComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {
-    setInterval(() => {
-      this,this.arr = [Math.random()];
-    }, 1000);
+    // setInterval(() => {
+    //   this,this.arr = [Math.random()];
+    // }, 1000);
   }
 
   public parent() {
